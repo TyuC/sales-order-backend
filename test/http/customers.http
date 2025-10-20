@@ -1,0 +1,48 @@
+@localhost=localhost:4004/odata/v4/main
+
+@id=8249dd80-0e91-4744-b25d-42f5ae4f3a6a
+
+GET http://{{localhost}}/Customers
+Content-Type: application/json
+
+###
+
+POST http://{{localhost}}/Customers
+Content-Type: application/json
+
+{
+    "id": "{{id}}",
+    "firstName": "Luccas",
+    "lastName": "Lima",
+    "email": "luccas.lima@numenit.com"
+}
+
+###
+
+DELETE http://{{localhost}}/Customers(id={{id}})
+Content-Type: application/json
+
+###
+
+PUT http://{{localhost}}/Customers(id={{id}})
+Content-Type: application/json
+
+{
+    "firstName": "John"
+}
+
+###
+
+PATCH http://{{localhost}}/Customers(id={{id}})
+Content-Type: application/json
+
+{
+    "firstName": "John"
+}
+
+# entity Customers{
+#     key id: UUID;
+#         firstName: String(20);
+#         lastName: String(100);
+#         email: String(255);
+# }
