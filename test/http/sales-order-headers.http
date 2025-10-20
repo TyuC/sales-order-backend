@@ -45,10 +45,15 @@ GET http://{{localhost}}/SalesOrderHeaders?$select=id,custumers&$expand=custumer
 
 ###
 
-# Descobrindo a quantidade de registros
+# Descobrindo a quantidade de registros com /$count
 GET http://{{localhost}}/SalesOrderHeaders/$count
 
 ###
 
-# Paginando os registros
+# Paginando os registros com $skip e $top
 GET http://{{localhost}}/SalesOrderHeaders?$skip=0&$top=5
+
+###
+
+# Buscando dados com $search
+GET http://{{localhost}}/SalesOrderHeaders?$search=79aon&$filter=totalAmount gt 500

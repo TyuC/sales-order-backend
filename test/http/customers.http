@@ -46,3 +46,10 @@ Content-Type: application/json
 #         lastName: String(100);
 #         email: String(255);
 # }
+
+###
+
+# Buscando dados com $search
+
+GET http://{{localhost}}/Customers?$search=982
+Content-Type: application/json
