@@ -26,3 +26,14 @@ Content-Type: application/json
 {
     "modifiedBy": "teste"
 }
+
+###
+
+# Expandindo os items
+GET http://{{localhost}}/SalesOrderHeaders?$expand=items($expand=product),custumers
+#GET http://{{localhost}}/SalesOrderHeaders?$filter=totalAmount le 200000&$expand=items($expand=product),customers
+
+###
+
+# Expandindo os items, produtos customers e filtrando
+GET http://{{localhost}}/SalesOrderHeaders?$expand=items($expand=product;$filter=quantity le 30),custumers
